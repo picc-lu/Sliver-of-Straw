@@ -163,4 +163,5 @@ public class AirSensor {
     public void setGmtModified(Date gmtModified) {
         this.gmtModified = gmtModified;
     }
+    //测试
 }
