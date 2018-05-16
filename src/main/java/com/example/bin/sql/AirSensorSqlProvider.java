@@ -27,12 +27,12 @@ public class AirSensorSqlProvider {
         String s = new SQL() {{
             SELECT("*");
             FROM(AIR_SENSOR_TABLE_NAME);
-            WHERE("duid=#{duid}");
+            WHERE("duid = #{duid}");
             if (timeStart != null) {
-                WHERE("collection_time>=#{timeStart}");
+                WHERE("collection_time >= #{timeStart}");
             }
             if (timeEnd != null) {
-                WHERE("collection_time<=#{timeEnd}");
+                WHERE("collection_time <= #{timeEnd}");
             }
         }}.toString();
         System.out.println(s);
