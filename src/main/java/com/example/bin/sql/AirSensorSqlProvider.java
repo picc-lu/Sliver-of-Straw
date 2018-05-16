@@ -24,8 +24,7 @@ public class AirSensorSqlProvider {
      */
     public String listAirSensorsByDuidAndTimeRange(@Param("timeStart") final Date timeStart,
             @Param("timeEnd") final Date timeEnd) {
-        String str = new SQL() {{
-
+        return new SQL() {{
             SELECT("*");
             FROM(AIR_SENSOR_TABLE_NAME);
             WHERE("duid = #{duid}");
@@ -36,6 +35,5 @@ public class AirSensorSqlProvider {
                 WHERE("collection_time <= #{timeEnd}");
             }
         }}.toString();
-        return str;
     }
 }
