@@ -20,6 +20,7 @@ import java.util.List;
 @Repository
 @Mapper
 public interface AirSensorMapper {
+
     /**
      * 传入 duid、开始时间、结束时间进行查询指定 duid 在某段时间范围内的数据
      *
@@ -30,7 +31,11 @@ public interface AirSensorMapper {
      * @return List<AirSensor>
      */
     @ResultMap("BaseResultMap")
-    @SelectProvider(type = AirSensorSqlProvider.class, method = "listAirSensorsByDuidAndTimeRange")
+    @SelectProvider(type = AirSensorSqlProvider.class, method = "universalSelect")
     List<AirSensor> listAirSensorsByDuidAndTimeRange(@Param("duid") Long duid, @Param("timeStart") Date timeStart,
             @Param("timeEnd") Date timeEnd);
+
+    @ResultMap("BaseResultMap")
+    @SelectProvider(type = AirSensorSqlProvider.class, method = "universalSelectNoParam")
+    List<AirSensor> listAllAirSensors();
 }

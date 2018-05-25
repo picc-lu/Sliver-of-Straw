@@ -42,4 +42,9 @@ public class AirSensorServiceImpl implements AirSensorService {
     public List<AirSensor> listAirSensorsByDuidAndTimeRange(Long duid, Date timeStart, Date timeEnd) {
         return airSensorMapper.listAirSensorsByDuidAndTimeRange(duid, timeStart, timeEnd);
     }
+
+    @Override
+    public List<AirSensor> listAllAirSensors() {
+        return airSensorMapper.listAllAirSensors();
+    }
 }

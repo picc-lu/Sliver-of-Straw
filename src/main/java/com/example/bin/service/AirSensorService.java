@@ -24,4 +24,6 @@ public interface AirSensorService {
      * @return List<AirSensor>
      */
     List<AirSensor> listAirSensorsByDuidAndTimeRange(Long duid, Date timeStart, Date timeEnd);
+
+    List<AirSensor> listAllAirSensors();
 }
